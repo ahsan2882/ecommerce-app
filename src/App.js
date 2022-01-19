@@ -7,7 +7,15 @@ import LoginContainer from "./Components/LoginSignup/LoginContainer";
 
 function App() {
   let navigate = useNavigate();
-  
+  useEffect(() => {
+    
+    if (localStorage.getItem('authenticated') === null || localStorage.getItem('authenticated') === 'false') {
+      localStorage.setItem('authenticated', 'false');
+      navigate('/login');
+    } else {
+      navigate('/');
+    }
+  }, [navigate])
   return (
     <>
       <BRouter>
