@@ -1,0 +1,49 @@
+@media (max-width: 1200px) {
+  .loginSec {
+    max-width: 60rem;
+  }
+}
+@media (max-width: 1024px) {
+    .loginSec{
+        max-width: 80%;
+        flex-direction: column;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .leftSec img{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .rightSec{
+        width: 80%;
+    }
+}
+@media(max-width: 768px){
+    .rightSec{
+        width: 70%;
+        justify-content:initial;
+    }
+}
+@media(max-width:468px) and (orientation: portrait){
+    .leftSec img{
+        height: 10rem;
+    }
+    .rightSec{
+        width: 100%;
+    }
+    .btnSec{
+        flex-direction: column;
+    }
+    .btnSec button{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .btnSec button:first-child{
+        width: 70%;
+        background-color: rgb(239,68,68);
+    }
+    .btnSec button:last-child{
+        width: 70%;
+        background-color: rgb(59,130,246);
+    }
+}
