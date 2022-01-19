@@ -14,6 +14,7 @@ export default function Login() {
         let passVal = document.getElementById('password').value;
         if (emailVal === userEmail && passVal === userPass) {
             navigate('/');
+            localStorage.setItem('authenticated', 'true');
         } else {
             alert("Wrong username or password");
         }
