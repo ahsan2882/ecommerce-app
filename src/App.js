@@ -1,6 +1,6 @@
 
-import React, { useEffect } from "react";
-import { BrowserRouter as BRouter, Route, Routes, useNavigate } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as BRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./Components/HomePage/HomePage";
 import LoginContainer from "./Components/LoginSignup/LoginContainer";
 
@@ -8,7 +8,7 @@ import LoginContainer from "./Components/LoginSignup/LoginContainer";
 function App() {
 	// let navigate = useNavigate();
 	// useEffect(() => {
-    
+
 	//   if (localStorage.getItem('authenticated') === null || localStorage.getItem('authenticated') === 'false') {
 	//     localStorage.setItem('authenticated', 'false');
 	//     navigate('/login');
@@ -24,6 +24,7 @@ function App() {
 					<Route path='/' element={<HomePage />} />
 					<Route path='/login' element={<LoginContainer page={"login"} />} />
 					<Route path='/signup' element={<LoginContainer page={"signup"} />} />
+					<Route path="*" element={<HomePage />} />
 				</Routes>
 			</BRouter>
 		</>
