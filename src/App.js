@@ -15,7 +15,6 @@ function App() {
 					<Route path='/' element={<HomePage />} />
 					<Route path='/login' element={<LoginContainer page={"login"} />} />
 					<Route path='/signup' element={<LoginContainer page={"signup"} />} />
-					<Route path='/dashboard' element={<HomePage />} />
 					<Route path='/logout' element={<LoggedOut />} />
 					<Route path="*" element={<NotFound />} />
 				</Routes>
