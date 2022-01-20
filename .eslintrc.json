@@ -18,16 +18,10 @@
         "react"
     ],
     "rules": {
-        "indent": [
-            "warn",
-            "tab"
-        ],
+        "indent": "off",
         "no-unreachable": "warn",
         "no-unused-vars": "warn",
-        "linebreak-style": [
-            "warn",
-            "unix"
-        ],
+        "linebreak-style": "off",
         "quotes": [
             "warn",
             "double"
