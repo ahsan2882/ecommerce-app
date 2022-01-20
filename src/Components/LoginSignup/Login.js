@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../assets/images/loginLogo.jpg";
 import LoginCss from "./Login.module.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { authCheck } from "../authCheck";
 
 export default function Login() {
@@ -56,8 +56,8 @@ export default function Login() {
 							</div>
 						</div>
 						<div className={`${LoginCss.btnSec} flex items-center justify-evenly w-full`}>
-							<button type="submit" className='self-center my-6 w-5/12 py-2 rounded-2xl bg-red-400 hover:bg-red-500 font-bold tracking-widest text-white uppercase text-lg'>Login</button>
-							<button type="button" className='self-center my-6 w-5/12 py-2 rounded-2xl bg-blue-400 hover:bg-blue-500 font-bold tracking-widest text-white uppercase text-lg' onClick={() => navigate("/signup")}>Signup</button>
+							<button type="submit" className='self-center my-6 w-5/12 py-2 rounded-2xl flex items-center justify-center bg-red-400 hover:bg-red-500 font-bold tracking-widest text-white uppercase text-lg'>Login</button>
+							<Link to ='/signup' className='self-center my-6 w-5/12 py-2 rounded-2xl flex items-center justify-center bg-blue-400 hover:bg-blue-500 font-bold tracking-widest text-white uppercase text-lg'>Signup</Link>
 						</div>
 					</form>
 				</section>
