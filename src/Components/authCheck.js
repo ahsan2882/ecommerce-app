@@ -14,26 +14,17 @@ const authCheck = (path) => {
             navigate("/login");
             return null;
         }
-        if ((currentTime - parseInt(loginTime) > 3600000)) {
+        if ((currentTime - parseInt(loginTime) > 1800000)) {
             localStorage.setItem("authenticated", "false");
-            navigate("/login");
             return null;
         }
+
         console.log(path);
         navigate(path);
         return null;
     }, []);
 
 
-};
-
-const authTimeCheck = () => {
-    let loginTime = localStorage.getItem("loginTime");
-    let currentTime = new Date().getTime();
-    if ((currentTime - parseInt(loginTime) > 3600000)) {
-        localStorage.setItem("authenticated", "false");
-        return null;
-    }
 };
 
 export { authCheck };
