@@ -1,11 +1,12 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
+import React from "react";
 import logo from "../../assets/images/loginLogo.jpg";
 import LoginCss from "./Login.module.css";
 import { useNavigate } from "react-router-dom";
+import { authCheck } from "../authCheck";
 
 export default function Login() {
 	let navigate = useNavigate();
+	authCheck("/");
 	const userEmail = "ahsan@gmail.com";
 	const userPass = "password123";
 	const submitForm = (e) => {
@@ -15,12 +16,11 @@ export default function Login() {
 		if (emailVal === userEmail && passVal === userPass) {
 			navigate("/");
 			localStorage.setItem("authenticated", "true");
-			localStorage.setItem("loginTime", new Date());
+			localStorage.setItem("loginTime", new Date().getTime());
 		} else {
 			alert("Wrong username or password");
 		}
 		console.log(emailVal, passVal);
-
 	};
 	const showPassword = () => {
 		let passField = document.querySelector("#password");
