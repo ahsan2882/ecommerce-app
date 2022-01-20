@@ -1,16 +1,10 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import { useLocation } from "react-router-dom";
+import { authCheck } from "../authCheck";
 
 export default function HomePage() {
-
-	let navigate = useNavigate();
-	useEffect(() => {
-		let authStatus = localStorage.getItem("authenticated");
-		if (authStatus === null || authStatus === "false") {
-			navigate("/login");
-			authStatus === null && localStorage.setItem("authenticated", "false");
-		}
-	}, []);
+	let location = useLocation();
+	authCheck(location.pathname);
 	return (
 		<>
 			<h1>This is the homepage</h1>
