@@ -6,17 +6,6 @@ import LoginContainer from "./Components/LoginSignup/LoginContainer";
 
 
 function App() {
-	// let navigate = useNavigate();
-	// useEffect(() => {
-
-	//   if (localStorage.getItem('authenticated') === null || localStorage.getItem('authenticated') === 'false') {
-	//     localStorage.setItem('authenticated', 'false');
-	//     navigate('/login');
-	//   } else {
-	//     navigate('/');
-	//     // if(new Date() - parseInt(localStorage.getItem('loginTime')))
-	//   }
-	// }, [navigate])
 	return (
 		<>
 			<BRouter>
@@ -24,6 +13,7 @@ function App() {
 					<Route path='/' element={<HomePage />} />
 					<Route path='/login' element={<LoginContainer page={"login"} />} />
 					<Route path='/signup' element={<LoginContainer page={"signup"} />} />
+					<Route path='/dashboard' element={<HomePage />} />
 					<Route path="*" element={<HomePage />} />
 				</Routes>
 			</BRouter>
