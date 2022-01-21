@@ -1,0 +1,9 @@
+.icon{
+    display: none;
+}
+.sideNavLi:hover .icon{
+    display: initial;
+}
+.subList{
+    display: none;
+}
