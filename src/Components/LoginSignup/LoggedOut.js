@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function LoggedOut() {
+    useEffect(() => {
+        localStorage.setItem("authenticated", "false");
+    }, []);
     return (
         <>
             <section className="flex flex-col items-center">
