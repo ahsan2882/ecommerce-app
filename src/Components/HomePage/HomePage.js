@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { authCheck } from "../authCheck";
 import Header from "./Header";
-import HeroNav from "./HeroNav";
+// import HeroNav from "./HeroNav";
 import ProductSection from "./ProductSection";
 
 export default function HomePage() {
@@ -12,7 +12,7 @@ export default function HomePage() {
 	return (
 		<>
 			<Header />
-			<HeroNav />
+			{/* <HeroNav /> */}
 			<ProductSection />
 		</>
 	);
