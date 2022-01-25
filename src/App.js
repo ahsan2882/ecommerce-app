@@ -10,16 +10,16 @@ import NotFound from "./Components/NotFound";
 function App() {
 	return (
 		<>
-				<BRouter>
-					<Routes>
-						<Route path='/' element={<HomePage />} />
-						<Route path='/login' element={<LoginContainer page={"login"} />} />
-						<Route path='/signup' element={<LoginContainer page={"signup"} />} />
-						<Route path='/logout' element={<LoggedOut />} />
-						<Route path='/products/:productId' element={<ProductDetail />} />
-						<Route path="*" element={<NotFound />} />
-					</Routes>
-				</BRouter>
+			<BRouter>
+				<Routes>
+					<Route path='/' element={<HomePage />} />
+					<Route path='/login' element={<LoginContainer page={"login"} />} />
+					<Route path='/signup' element={<LoginContainer page={"signup"} />} />
+					<Route path='/logout' element={<LoggedOut />} />
+					<Route path='/products/:productId' element={<ProductDetail />} />
+					<Route path="*" element={<NotFound />} />
+				</Routes>
+			</BRouter>
 		</>
 	);
 }
