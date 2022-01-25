@@ -16,13 +16,12 @@ export default function FlashSale() {
                 <section className="bg-white flex flex-col">
                     <section className="flex items-center justify-between px-4 border-b border-b-gray-500 py-3">
                         <h1>On Sale Now</h1>
-                        <button className="border border-indigo-500 text-indigo-500 px-2 py-1 uppercase">Shop More</button>
                     </section>
-                    <section className="py-4 grid grid-cols-4">
+                    <section className="py-4 grid grid-cols-4 grid-rows-2 gap-4 px-6">
                         {flashItems.map(item => (
-                            <Link key={item.id} to={`/products/${item.id}`} className="flex flex-col w-1/6 items-start shadow">
+                            <Link key={item.id} to={`/products/${item.id}`} className="flex flex-col w-full items-start shadow">
                                 <div className="w-full">
-                                    <img src={item.image} alt={item.description.substring(0, 15)} className="w-full h-60 object-contain mb-6 py-4 border-b" />
+                                    <img src={item.image} alt={item.title.substring(0, 15)} className="w-full h-60 object-contain mb-6 py-4 border-b" />
                                     <h1 className="px-4">{item.title.substring(0, 15)}...</h1>
                                     <div className="flex items-center px-4">
                                         <h1>${item.price}</h1>
