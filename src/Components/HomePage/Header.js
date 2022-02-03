@@ -1,13 +1,7 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Header() {
-    let navigate = useNavigate();
-    // eslint-disable-next-line no-unused-vars
-    const logout = () => {
-        localStorage.setItem("authenticated", "false");
-        navigate("/logout");
-    };
     return (
         <>
             <header className="w-full">
