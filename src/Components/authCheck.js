@@ -1,26 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 const authCheck = (path) => {
+    const authStatus = useSelector(state => state.authenticated);
+    // console.log(authStatus);
     let navigate = useNavigate();
     useEffect(() => {
-        let loginTime = localStorage.getItem("loginTime");
-        let currentTime = new Date().getTime();
-        let authStatus = localStorage.getItem("authenticated");
 
-        if (authStatus === null || loginTime === null || authStatus === "false") {
-            localStorage.setItem("authenticated", "false");
-            localStorage.setItem("loginTime", "-1");
+        if (authStatus === false) {
             navigate("/login");
             return null;
         }
-        if ((currentTime - parseInt(loginTime) > 18000000)) {
-            localStorage.setItem("authenticated", "false");
-            navigate("/logout");
-            return null;
-        }
-
-        console.log(path);
         navigate(path);
         return null;
     }, []);
