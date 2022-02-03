@@ -3,20 +3,23 @@ import logo from "../../assets/images/loginLogo.jpg";
 import LoginCss from "./Login.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { authCheck } from "../authCheck";
+import { useSelector, useDispatch } from "react-redux";
+import { loginUser } from "../reduxStore/store";
 
 export default function Login() {
+	const dispatch = useDispatch();
+	const userEmail = useSelector(state => state.username);
+	const userPass = useSelector(state => state.password);
 	let navigate = useNavigate();
 	authCheck("/");
-	const userEmail = "ahsan@gmail.com";
-	const userPass = "password123";
 	const submitForm = (e) => {
 		e.preventDefault();
+		console.log(userEmail, userPass);
 		let emailVal = document.getElementById("email").value;
 		let passVal = document.getElementById("password").value;
 		if (emailVal === userEmail && passVal === userPass) {
 			navigate("/");
-			localStorage.setItem("authenticated", "true");
-			localStorage.setItem("loginTime", new Date().getTime());
+			dispatch(loginUser());
 		} else {
 			alert("Wrong username or password");
 		}
