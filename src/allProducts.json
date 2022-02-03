@@ -1043,5 +1043,11 @@
                 "count": 235
             }
         }
+    ],
+    "categories" : [
+        "women's clothing",
+        "men's clothing",
+        "electronics",
+        "jewellery"
     ]
 }
