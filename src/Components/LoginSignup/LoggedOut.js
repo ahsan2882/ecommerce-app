@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logoutUser } from "../reduxStore/store";
 
 function LoggedOut() {
-    useEffect(() => {
-        localStorage.setItem("authenticated", "false");
-    }, []);
+    
+    const dispatch = useDispatch();
+    dispatch(logoutUser());
     return (
         <>
             <section className="flex flex-col items-center">
