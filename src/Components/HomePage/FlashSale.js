@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import useFetch from "../customHooks/useFetch";
 
 export default function FlashSale() {
-    const [flashItems, setFlashItems] = useState([]);
-    useEffect(() => {
-        fetch("http://localhost:8000/all-products/sale")
-            .then(res => res.json())
-            .then(json => setFlashItems(json))
-            .catch(error => console.log(error));
-    }, []);
+    const { data: saleItems, isLoading, error } = useFetch("http://localhost:8000/all-products/sale");
+    
     return (
         <>
             <section className="max-w-6xl w-full mx-auto py-8">
@@ -18,7 +14,9 @@ export default function FlashSale() {
                         <h1>On Sale Now</h1>
                     </section>
                     <section className="py-4 grid grid-cols-4 grid-rows-2 gap-4 px-6">
-                        {flashItems.map(item => (
+                        {error && <h1>{error}</h1>}
+                        {isLoading && <h1>Loading....</h1>}
+                        {saleItems && saleItems.map(item => (
                             <Link key={item.id} to={`/products/${item.id}`} className="flex flex-col w-full items-start shadow">
                                 <div className="w-full">
                                     <img src={item.image} alt={item.title.substring(0, 15)} className="w-full h-60 object-contain mb-6 py-4 border-b" />
